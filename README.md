@@ -17,8 +17,8 @@ This is a widget for [Notion](https://notion.so) based on `saman/notion-quote`. 
   1. Click `New Repository Secret`
   1. Name: `NOTION_INTEGRATION_KEY`
   1. Value: Paste in value from above.
-1. Add Notion integration to notion page.
+1. Add Notion integration to Notion page.
   1. Go to Notion page with quote table.
   1. CLick `Share` (top right hand corner)
   1. Click `Add emails, people, integrations`
-  1. Find the name of the integration made above
+  1. Find, and click, the name of the integration made above
