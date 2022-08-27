@@ -2,7 +2,7 @@ name: Update Quote List
 
 on:
   workflow_dispatch:
-    branches: [ content ]
+    branches: [ master ]
 
 jobs:
   update-index-json:
@@ -23,4 +23,3 @@ jobs:
           add: 'index.json'
           push: true
           new_branch: content
-          tag_push: '--force'
