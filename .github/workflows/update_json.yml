@@ -1,8 +1,8 @@
-name: Update Quote LIst
+name: Update Quote List
 
 on:
   workflow_dispatch:
-    branches: [ master ]
+    branches: [ content ]
 
 jobs:
   update-index-json:
