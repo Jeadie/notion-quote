@@ -1,6 +1,4 @@
 #!/bin/bash
-NOTION_URL="https://www.notion.so/jeadie/Bullet-point-testing-page-7bf279c4bf644a499b64a2cfbcbc3362"
-
 PAGE_ID=${NOTION_URL##*-}
 
 PAGE_CHILDREN=$(curl 'https://api.notion.com/v1/blocks/'"$PAGE_ID"'/children' \

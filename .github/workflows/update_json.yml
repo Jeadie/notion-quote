@@ -1,0 +1,25 @@
+name: Update Quote LIst
+
+on:
+  workflow_dispatch:
+    branches: [ master ]
+
+jobs:
+  update-index-json:
+    runs-on: ubuntu-latest
+    env:
+      NOTION_URL: ${{ secrets.NOTION_URL }}
+      NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: create new json
+        run: ./update_json.sh
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Update index.json'
+          add: 'index.json'
+          push: true
+          new_branch: content
