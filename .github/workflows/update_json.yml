@@ -23,3 +23,4 @@ jobs:
           add: 'index.json'
           push: true
           new_branch: content
+          tag_push: '--force'

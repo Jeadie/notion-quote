@@ -15,7 +15,7 @@ This is a widget for [Notion](https://notion.so) based on `saman/notion-quote`. 
 1. Save Notion integration key to Github Secret
   1. Go to https://github.com/<username>/notion-quote/settings/secrets/actions
   1. Click `New Repository Secret`
-  1. Name: `NOTION_INTEGRATION_KEY`
+  1. Name: `NOTION_API_KEY`
   1. Value: Paste in value from above.
 1. Add Notion integration to Notion page.
   1. Go to Notion page with quote table.
