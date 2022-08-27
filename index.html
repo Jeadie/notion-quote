@@ -158,18 +158,22 @@
             const modes_buttons = document.querySelectorAll(".settings .modes button");
             const size_buttons = document.querySelectorAll(".settings .size button");
 
+            function setQuotefromJson(data, isOkay) {
+                if (data.length > 0 && isOkay) {
+                        random_quote = data[Math.floor(Math.random() * data.length - 1) + 1];
+                        quote_text.textContent = random_quote.content;
+                        cite.textContent = random_quote.author;
+                } else {
+                    quote_text.textContent = "An error occured";
+                    console.log(data);
+                }
+            }
+
             async function updateQuote() {
                 try {
-                    const response = await fetch("https://api.quotable.io/random");
+                    const response = await fetch("index.json");
                     const data = await response.json();
-
-                    if (response.ok) {
-                        quote_text.textContent = data.content;
-                        cite.textContent = data.author;
-                    } else {
-                        quote_text.textContent = "An error occured";
-                        console.log(data);
-                    }
+                    setQuotefromJson(data, response.ok)
                 } catch (error) {
                     quote_text.textContent = "Oops! There is a problem with the quotes server.";
                     console.log(data);
@@ -179,14 +183,7 @@
             async function updateQuoteCustom(f) {
                 const response = await fetch(f);
                 const data = await response.json();
-                if (response.ok && data.length > 0) {
-                    random_quote = data[Math.floor(Math.random() * data.length - 1) + 1];
-                    quote_text.textContent = random_quote.content;
-                    cite.textContent = random_quote.author;
-                } else {
-                    quote_text.textContent = "An error occured";
-                    console.log(data);
-                }
+                setQuotefromJson(data, response.ok)
             }
 
             function updateStyle() {
