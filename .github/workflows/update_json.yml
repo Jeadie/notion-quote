@@ -1,4 +1,4 @@
-name: Update Quote LIst
+name: Update Quote List
 
 on:
   workflow_dispatch:
